@@ -1,0 +1,9 @@
+# Ignore all .ddev except config
+.ddev/*
+!.ddev/*.yaml
+
+
+# MISC FILES / IDE CONFIGS
+.cache
+.DS_Store
+.idea
