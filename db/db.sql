@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 18, 2024 at 12:26 AM
+-- Generation Time: Mar 18, 2024 at 04:40 AM
 -- Server version: 10.4.27-MariaDB-1:10.4.27+maria~ubu2004-log
 -- PHP Version: 8.1.16
 
@@ -29,9 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `notes` (
   `id` int(11) NOT NULL,
-  `Body` text NOT NULL,
+  `body` text NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `notes`
+--
+
+INSERT INTO `notes` (`id`, `body`, `user_id`) VALUES
+(1, 'Ideas for next vacation', 1),
+(2, 'Work reminders...', 1),
+(3, 'Thoughts on my continued learning of PHP', 1);
 
 -- --------------------------------------------------------
 
@@ -44,6 +53,14 @@ CREATE TABLE `users` (
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`) VALUES
+(1, 'John', 'john@example.com'),
+(2, 'Kate', 'kate@example.com');
 
 --
 -- Indexes for dumped tables
@@ -71,7 +88,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
