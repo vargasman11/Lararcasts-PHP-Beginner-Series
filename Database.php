@@ -6,8 +6,7 @@ class Database
     public $statement;
 
     public function __construct($config, $username = 'db', $password = 'db')
-
-            {
+    {
         $dsn = 'mysql:' . http_build_query($config, '', ';');
 
         $this->connection = new PDO($dsn, $username, $password, [
