@@ -1,17 +1,15 @@
 <?php
 
-
 class Database
 {
     public $connection;
     public $statement;
 
-    //public function __construct($config, $username = 'root', $password = '')
-    //DDEV Config
     public function __construct($config, $username = 'db', $password = 'db')
 
-    {
+            {
         $dsn = 'mysql:' . http_build_query($config, '', ';');
+
         $this->connection = new PDO($dsn, $username, $password, [
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         ]);
@@ -40,7 +38,7 @@ class Database
     {
         $result = $this->find();
 
-        if (!$result) {
+        if (! $result) {
             abort();
         }
 
