@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.5-10.4.27-MariaDB-1:10.4.27+maria~ubu2004-log)
 # Database: db
-# Generation Time: 2024-03-22 04:11:20 +0000
+# Generation Time: 2024-03-23 02:28:52 +0000
 # ************************************************************
 
 
@@ -43,8 +43,8 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
                          `id` int(11) NOT NULL AUTO_INCREMENT,
-                         `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
                          `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+                         `password` varchar(255) DEFAULT NULL,
                          PRIMARY KEY (`id`),
                          UNIQUE KEY `users_email_idx` (`email`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -52,10 +52,10 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 
-INSERT INTO `users` (`id`, `name`, `email`)
+INSERT INTO `users` (`id`, `email`, `password`)
 VALUES
-    (1,'John','john@example.com'),
-    (2,'Kate','kate@example.com');
+    (7,'joe@joe.com','cleartext'),
+    (8,'jeffrey@laracasts.com','password');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
