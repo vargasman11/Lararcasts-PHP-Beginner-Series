@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.5-10.4.27-MariaDB-1:10.4.27+maria~ubu2004-log)
 # Database: db
-# Generation Time: 2024-03-23 02:28:52 +0000
+# Generation Time: 2024-03-23 03:37:24 +0000
 # ************************************************************
 
 
@@ -54,8 +54,7 @@ LOCK TABLES `users` WRITE;
 
 INSERT INTO `users` (`id`, `email`, `password`)
 VALUES
-    (7,'joe@joe.com','cleartext'),
-    (8,'jeffrey@laracasts.com','password');
+    (10,'joe2@joe.com','$2y$10$Dm/2wR8Ux3JHV6xOfQ5/.OV32MXL6pxSOGqYfU4l7h9MLZ2cXLuqG');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
